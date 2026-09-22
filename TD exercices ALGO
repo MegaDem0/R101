@@ -1,0 +1,494 @@
+# I. Variables, constantes, opérateurs, entrées-sorties
+
+## Exercice 1
+
+Suite 1 :  
+A = 8  
+B = 1
+
+Suite 2 :  
+A = 20  
+B = 5  
+C = 15
+
+Suite 3 :  
+A = 10  
+B = 40  
+C = 50
+
+## Exercice 2
+
+Algorithme PrixTTC
+
+Variables  
+prixHT, prixTTC : Réel
+
+Début  
+Écrire("Entrez le prix HT : ")  
+Lire(prixHT)
+
+```
+prixTTC ← prixHT × 1,20
+
+Écrire("Prix TTC : ", prixTTC, " €")
+```
+
+Fin
+
+## Exercice 3
+
+Algorithme Echange
+
+Variables  
+X, Y, Temp : Entier
+
+Début  
+Écrire("Entrez X : ")  
+Lire(X)
+
+```
+Écrire("Entrez Y : ")
+Lire(Y)
+
+Temp ← X
+X ← Y
+Y ← Temp
+
+Écrire("X = ", X)
+Écrire("Y = ", Y)
+```
+
+Fin
+
+## Exercice 4
+
+Algorithme EchangeSansVariable
+
+Variables  
+X, Y : Entier
+
+Début  
+Écrire("Entrez X : ")  
+Lire(X)
+
+```
+Écrire("Entrez Y : ")
+Lire(Y)
+
+X ← X + Y
+Y ← X - Y
+X ← X - Y
+
+Écrire("X = ", X)
+Écrire("Y = ", Y)
+```
+
+Fin
+
+## Exercice 6
+
+Algorithme PermutationCirculaire
+
+Variables  
+X, Y, Z, Temp : Entier
+
+Début  
+Écrire("Entrez X, Y et Z : ")  
+Lire(X, Y, Z)
+
+```
+Temp ← X
+X ← Y
+Y ← Z
+Z ← Temp
+
+Écrire("X = ", X)
+Écrire("Y = ", Y)
+Écrire("Z = ", Z)
+```
+
+Fin
+
+## Exercice 7
+
+a) Prix des menus :
+
+prixMenu1 ← 15  
+prixMenu2 ← 20  
+prixMenu3 ← 25
+
+b) Données d'entrée :
+
+nombreMenu1  
+nombreMenu2  
+nombreMenu3
+
+Donnée de sortie :
+
+total
+
+Variables constantes :
+
+prixMenu1 = 15  
+prixMenu2 = 20  
+prixMenu3 = 25
+
+c)
+
+Algorithme Restaurant
+
+Constantes  
+prixMenu1 ← 15  
+prixMenu2 ← 20  
+prixMenu3 ← 25
+
+Variables  
+nombreMenu1, nombreMenu2, nombreMenu3 : Entier  
+total : Réel
+
+Début  
+Écrire("Nombre de menus à 15 € : ")  
+Lire(nombreMenu1)
+
+```
+Écrire("Nombre de menus à 20 € : ")
+Lire(nombreMenu2)
+
+Écrire("Nombre de menus à 25 € : ")
+Lire(nombreMenu3)
+
+total ← nombreMenu1 × prixMenu1
+       + nombreMenu2 × prixMenu2
+       + nombreMenu3 × prixMenu3
+
+Écrire("Total : ", total, " €")
+```
+
+Fin
+
+## Exercice 8
+
+Algorithme ConversionDuree
+
+Variables  
+secondes, heures, minutes, reste : Entier
+
+Début  
+Écrire("Entrez une durée en secondes : ")  
+Lire(secondes)
+
+```
+heures ← secondes DIV 3600
+reste ← secondes MOD 3600
+
+minutes ← reste DIV 60
+secondes ← reste MOD 60
+
+Écrire(heures, " h ", minutes, " min ", secondes, " s")
+```
+
+Fin
+
+# II. Exécution conditionnelle
+
+## Exercice 1
+
+a) A = 2, B = 9, C = 3
+
+b) A = 14, B = 9, C = 5
+
+c) A = 5, B = 3, C = 1
+
+d) A = 10, B = 7, C = 3
+
+e) A = 12, B = 8, C = 4
+
+## Exercice 2
+
+1. age >= 18
+    
+2. age < 7
+    
+3. anneeNaissance MOD 2 = 0
+    
+4. (annee1 MOD 2 = 0 ET annee2 MOD 2 ≠ 0)  
+    OU  
+    (annee1 MOD 2 ≠ 0 ET annee2 MOD 2 = 0)
+    
+5. annee1 = annee2 ET annee2 = annee3
+    
+6. age < 12 ET (filmInterditMoins12 OU scenesViolentes)
+    
+7. vitesseVent < 20 ET NON pluie ET NON neige ET bonneVisibilite
+    
+8. francais ET (paysUE OU suisse)
+    
+9. passeportValide ET (NON visaNecessaire OU visaValide)
+    
+10. age >= 12 ET age < 28
+    
+11. billet ET (age > 18 OU accompagneAdulte)
+    
+12. pass OU (volontaire ET reunionOrientation)
+    
+13. diplomeRequis ET experience >= 2
+    
+14. etudiant OU diplomeDepuisMoinsUnAn
+    
+15. diplomeDocteurPharmacie ET experience >= 6 ET population > 2500
+    
+16. abonnementActif ET paysDisponible
+    
+17. (age > 65 ET carteIdentite) OU membreAssociationSeniors
+    
+18. majeur ET impotsFrance ET NON dejaTitulaire
+    
+19. taille > 1,40 ET NON cardiaque
+    
+20. critAir <= 3 OU voitureCollection OU vehiculeUrgence
+    
+
+## Exercice 3
+
+Algorithme TriCroissant
+
+Variables  
+X, Y, Z, Temp : Entier
+
+Début  
+Écrire("Entrez X, Y et Z : ")  
+Lire(X, Y, Z)
+
+```
+Si X > Y Alors
+    Temp ← X
+    X ← Y
+    Y ← Temp
+FinSi
+
+Si Y > Z Alors
+    Temp ← Y
+    Y ← Z
+    Z ← Temp
+FinSi
+
+Si X > Y Alors
+    Temp ← X
+    X ← Y
+    Y ← Temp
+FinSi
+
+Écrire("Ordre croissant : ", X, Y, Z)
+```
+
+Fin
+
+## Exercice 4
+
+Algorithme TournoiBasket
+
+Variables  
+age : Entier  
+membreEquipe, certificatValide : Booléen
+
+Début  
+Écrire("Age : ")  
+Lire(age)
+
+```
+Écrire("Membre d'une équipe inscrite ? ")
+Lire(membreEquipe)
+
+Écrire("Certificat médical valide ? ")
+Lire(certificatValide)
+
+Si age >= 16 ET membreEquipe ET certificatValide Alors
+    Écrire("Le participant est éligible.")
+Sinon
+    Écrire("Le participant n'est pas éligible.")
+FinSi
+```
+
+Fin
+
+## Exercice 5
+
+Algorithme CalculIMC
+
+Variables  
+poids, taille, imc : Réel
+
+Début  
+Écrire("Poids en kg : ")  
+Lire(poids)
+
+```
+Écrire("Taille en mètres : ")
+Lire(taille)
+
+imc ← poids / (taille × taille)
+
+Écrire("IMC = ", imc)
+
+Si imc < 18,5 Alors
+    Écrire("Insuffisance pondérale")
+SinonSi imc < 25 Alors
+    Écrire("Corpulence normale")
+SinonSi imc < 30 Alors
+    Écrire("Surpoids")
+SinonSi imc <= 35 Alors
+    Écrire("Obésité modérée")
+Sinon
+    Écrire("Obésité sévère")
+FinSi
+```
+
+Fin
+
+## Exercice 6
+
+Algorithme Reduction
+
+Variables  
+montant, montantFinal : Réel  
+membre, codeValide : Booléen
+
+Début  
+Écrire("Montant total : ")  
+Lire(montant)
+
+```
+Écrire("Membre ? ")
+Lire(membre)
+
+Écrire("Code de réduction valide ? ")
+Lire(codeValide)
+
+Si membre Alors
+    montantFinal ← montant × 0,85
+SinonSi codeValide Alors
+    montantFinal ← montant × 0,90
+SinonSi montant > 100 Alors
+    montantFinal ← montant × 0,95
+Sinon
+    montantFinal ← montant
+FinSi
+
+Écrire("Montant final : ", montantFinal, " €")
+```
+
+Fin
+
+## Exercice 7
+
+Algorithme Divisibilite
+
+Variables  
+nombre : Entier
+
+Début  
+Écrire("Entrez un nombre entre 1 et 9999 : ")  
+Lire(nombre)
+
+```
+Si nombre < 1 OU nombre > 9999 Alors
+    Écrire("Erreur : le nombre doit être entre 1 et 9999.")
+SinonSi nombre MOD 2 = 0 ET nombre MOD 5 = 0 Alors
+    Écrire("Le nombre est divisible par 2 et par 5.")
+SinonSi nombre MOD 2 = 0 Alors
+    Écrire("Le nombre est divisible par 2.")
+SinonSi nombre MOD 5 = 0 Alors
+    Écrire("Le nombre est divisible par 5.")
+Sinon
+    Écrire("Le nombre n'est divisible ni par 2 ni par 5.")
+FinSi
+```
+
+Fin
+
+## Exercice 9
+
+Algorithme StationEssence
+
+Constantes  
+prixSP95 ← 1,617  
+prixSP98 ← 1,691  
+prixGazole ← 1,545  
+prixE85 ← 0,675
+
+Variables  
+typeCarburant : Entier  
+litres, prix : Réel
+
+Début  
+Écrire("1 - SP95")  
+Écrire("2 - SP98")  
+Écrire("3 - Gazole")  
+Écrire("4 - E85")  
+Écrire("Choisissez le carburant : ")  
+Lire(typeCarburant)
+
+```
+Écrire("Nombre de litres : ")
+Lire(litres)
+
+Si typeCarburant = 1 Alors
+    prix ← prixSP95
+SinonSi typeCarburant = 2 Alors
+    prix ← prixSP98
+SinonSi typeCarburant = 3 Alors
+    prix ← prixGazole
+SinonSi typeCarburant = 4 Alors
+    prix ← prixE85
+Sinon
+    Écrire("Type de carburant invalide.")
+FinSi
+
+Si typeCarburant >= 1 ET typeCarburant <= 4 Alors
+    Écrire("Montant à payer : ", litres × prix, " €")
+FinSi
+```
+
+Fin
+
+## Exercice 10
+
+Algorithme JourSuivant
+
+Variables  
+jour, mois, joursDansMois : Entier
+
+Début  
+Écrire("Entrez le jour et le mois : ")  
+Lire(jour, mois)
+
+```
+Si mois = 2 Alors
+    joursDansMois ← 28
+SinonSi mois = 4 OU mois = 6 OU mois = 9 OU mois = 11 Alors
+    joursDansMois ← 30
+Sinon
+    joursDansMois ← 31
+FinSi
+
+Si jour < 1 OU jour > joursDansMois OU mois < 1 OU mois > 12 Alors
+    Écrire("Date invalide.")
+Sinon
+    jour ← jour + 1
+
+    Si jour > joursDansMois Alors
+        jour ← 1
+        mois ← mois + 1
+    FinSi
+
+    Si mois = 13 Alors
+        jour ← 1
+        mois ← 1
+        Écrire(jour, " janvier 2026")
+    Sinon
+        Écrire(jour, " ", nomMois(mois), " 2025")
+    FinSi
+FinSi
+```
+
+Fin
