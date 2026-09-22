@@ -1,0 +1,478 @@
+# III. Boucles
+
+## Exercice 1
+
+1. Faire la moyenne de plusieurs notes et s'arrêter lorsque l'utilisateur entre 0 :
+   → Boucle `TantQue`
+
+2. Choisir une couleur parmi trois :
+   → Pas de boucle
+
+3. Faire la moyenne de 10 notes :
+   → Boucle `Pour`
+
+4. Faire la moyenne de N notes, N étant choisi au début :
+   → Boucle `Pour`
+
+5. Convertir une somme d'euros en livres/dollars une seule fois :
+   → Pas de boucle
+
+6. Faire la moyenne de plusieurs notes et demander à chaque fois si l'utilisateur veut continuer :
+   → Boucle `TantQue` ou `Répéter...Jusqu'à`
+
+7. Convertir des euros jusqu'à ce que l'utilisateur entre 0 :
+   → Boucle `TantQue`
+
+8. Faire la moyenne de notes et s'arrêter lorsqu'une note négative est saisie :
+   → Boucle `TantQue`
+
+9. Demander une réponse jusqu'à obtenir OUI ou NON :
+   → Boucle `TantQue`
+
+## Exercice 2
+
+On a :
+
+```text
+U0 = 5
+Un+1 = 3 × Un + 2
+```
+
+### Algorithme A
+
+L'algorithme A effectue une itération supplémentaire et ne permet pas d'obtenir correctement les termes demandés.
+
+### Algorithme B
+
+L'algorithme B est correct car il affiche d'abord le terme actuel, puis calcule le terme suivant.
+
+```text
+U ← 5
+
+Pour i allant de 0 à N faire
+    Écrire(U)
+    U ← 3 × U + 2
+FinPour
+```
+
+### Algorithme C
+
+L'algorithme C est incorrect car la valeur de `U` est réinitialisée à 5 à chaque tour de boucle.
+
+## Exercice 3
+
+### Transformation de `TantQue` en `Pour`
+
+Algorithme initial :
+
+```text
+i ← 1
+
+TantQue i <= 10 faire
+    Écrire(i × i)
+    i ← i + 1
+FinTantQue
+```
+
+Équivalent avec `Pour` :
+
+```text
+Pour i allant de 1 à 10 faire
+    Écrire(i × i)
+FinPour
+```
+
+### Transformation de `Pour` en `TantQue`
+
+Algorithme initial :
+
+```text
+Pour i allant de 1 à 10 faire
+    Écrire(i × 3)
+FinPour
+```
+
+Équivalent avec `TantQue` :
+
+```text
+i ← 1
+
+TantQue i <= 10 faire
+    Écrire(i × 3)
+    i ← i + 1
+FinTantQue
+```
+
+## Exercice 4
+
+### a)
+
+Comme on connaît à l'avance le nombre de valeurs à additionner (10), on utilise une boucle `Pour`.
+
+### b)
+
+```text
+Algorithme Somme10Nombres
+
+Variables
+    nombre, somme, i : Entier
+
+Début
+    somme ← 0
+
+    Pour i allant de 1 à 10 faire
+        Écrire("Entrez un nombre : ")
+        Lire(nombre)
+
+        somme ← somme + nombre
+    FinPour
+
+    Écrire("Somme = ", somme)
+Fin
+```
+
+## Exercice 5
+
+```text
+Algorithme DistanceTotale
+
+Variables
+    N, i : Entier
+    distance, total : Réel
+
+Début
+    total ← 0
+
+    Écrire("Nombre de jours : ")
+    Lire(N)
+
+    Pour i allant de 1 à N faire
+        Écrire("Distance du jour ", i, " : ")
+        Lire(distance)
+
+        total ← total + distance
+    FinPour
+
+    Écrire("Distance totale = ", total)
+Fin
+```
+
+## Exercice 6
+
+```text
+Algorithme NombresImpairs
+
+Variables
+    N, i : Entier
+
+Début
+    Écrire("Entrez N : ")
+    Lire(N)
+
+    Pour i allant de 2 × N - 1 à 1 avec un pas de -2 faire
+        Écrire(i)
+    FinPour
+Fin
+```
+
+Exemple avec `N = 5` :
+
+```text
+9 7 5 3 1
+```
+
+## Exercice 7
+
+```text
+Algorithme SommeJusquaSeuil
+
+Variables
+    seuil, somme, nombre : Entier
+
+Début
+    Écrire("Entrez le seuil : ")
+    Lire(seuil)
+
+    somme ← 0
+    nombre ← 0
+
+    TantQue somme <= seuil faire
+        nombre ← nombre + 1
+        somme ← somme + nombre
+    FinTantQue
+
+    Écrire("Dernier entier ajouté : ", nombre)
+Fin
+```
+
+Exemple avec `seuil = 20` :
+
+```text
+1 + 2 + 3 + 4 + 5 + 6 = 21
+
+Résultat : 6
+```
+
+## Exercice 8
+
+### a) Une seule colonne — toutes les lettres en tarif prioritaire
+
+```text
+Algorithme AffranchissementPrioritaire
+
+Variables
+    poids, total : Réel
+
+Début
+    total ← 0
+
+    Écrire("Entrez le poids de la lettre (0 pour terminer) : ")
+    Lire(poids)
+
+    TantQue poids <> 0 faire
+
+        Si poids <= 20 Alors
+            total ← total + 0,95
+        SinonSi poids <= 100 Alors
+            total ← total + 1,90
+        SinonSi poids <= 250 Alors
+            total ← total + 3,80
+        FinSi
+
+        Écrire("Entrez le poids de la lettre (0 pour terminer) : ")
+        Lire(poids)
+    FinTantQue
+
+    Écrire("Total = ", total, " €")
+Fin
+```
+
+### b) Trois colonnes
+
+```text
+Algorithme Affranchissement
+
+Variables
+    poids, total : Réel
+    typeLettre : Entier
+
+Début
+    total ← 0
+
+    Écrire("Poids de la lettre (0 pour terminer) : ")
+    Lire(poids)
+
+    TantQue poids <> 0 faire
+
+        Écrire("1 - Prioritaire")
+        Écrire("2 - Verte")
+        Écrire("3 - Écopli")
+        Lire(typeLettre)
+
+        Si poids <= 20 Alors
+            Si typeLettre = 1 Alors
+                total ← total + 0,95
+            SinonSi typeLettre = 2 Alors
+                total ← total + 0,80
+            Sinon
+                total ← total + 0,78
+            FinSi
+
+        SinonSi poids <= 100 Alors
+            Si typeLettre = 1 Alors
+                total ← total + 1,90
+            SinonSi typeLettre = 2 Alors
+                total ← total + 1,60
+            Sinon
+                total ← total + 1,56
+            FinSi
+
+        SinonSi poids <= 250 Alors
+            Si typeLettre = 1 Alors
+                total ← total + 3,80
+            SinonSi typeLettre = 2 Alors
+                total ← total + 3,20
+            Sinon
+                total ← total + 3,12
+            FinSi
+        FinSi
+
+        Écrire("Poids de la lettre (0 pour terminer) : ")
+        Lire(poids)
+
+    FinTantQue
+
+    Écrire("Total = ", total, " €")
+Fin
+```
+
+## Exercice 10
+
+Les figures doivent être réalisées avec des boucles imbriquées.
+
+### Figure 1
+
+```text
+Algorithme Figure1
+
+Variables
+    N, i, j : Entier
+
+Début
+    Lire(N)
+
+    Pour i allant de 1 à N faire
+        Pour j allant de 1 à N faire
+            Écrire("*", sans retour à la ligne)
+        FinPour
+
+        Écrire("")
+    FinPour
+Fin
+```
+
+### Figure 2
+
+```text
+Algorithme Figure2
+
+Variables
+    N, i, j : Entier
+
+Début
+    Lire(N)
+
+    Pour i allant de 1 à N faire
+        Pour j allant de 1 à i faire
+            Écrire("*", sans retour à la ligne)
+        FinPour
+
+        Écrire("")
+    FinPour
+Fin
+```
+
+### Figure 3
+
+```text
+Algorithme Figure3
+
+Variables
+    N, i, j : Entier
+
+Début
+    Lire(N)
+
+    Pour i allant de N à 1 avec un pas de -1 faire
+        Pour j allant de 1 à i faire
+            Écrire("*", sans retour à la ligne)
+        FinPour
+
+        Écrire("")
+    FinPour
+Fin
+```
+
+### Figure 4
+
+La figure 4 n'était pas visible dans les éléments de la fiche que tu m'avais transmis. Je ne vais donc pas inventer son motif.
+
+## Exercice 11
+
+Afficher les nombres de 1 à 100 qui :
+
+* ne sont pas multiples de 5 ;
+* ne contiennent pas le chiffre 5.
+
+```text
+Algorithme NombresSans5
+
+Variables
+    i, chiffre, nombre : Entier
+    contient5 : Booléen
+
+Début
+
+    Pour i allant de 1 à 100 faire
+
+        Si i MOD 5 <> 0 Alors
+
+            nombre ← i
+            contient5 ← Faux
+
+            TantQue nombre > 0 faire
+
+                chiffre ← nombre MOD 10
+
+                Si chiffre = 5 Alors
+                    contient5 ← Vrai
+                FinSi
+
+                nombre ← nombre DIV 10
+
+            FinTantQue
+
+            Si contient5 = Faux Alors
+                Écrire(i)
+            FinSi
+
+        FinSi
+
+    FinPour
+
+Fin
+```
+
+## Exercice 12
+
+Afficher tous les nombres compris entre 100 et 2000 pour lesquels **au moins un chiffre apparaît exactement deux fois**.
+
+Exemple :
+
+```text
+330 → affiché
+1077 → affiché
+1661 → affiché
+1888 → non affiché
+```
+
+```text
+Algorithme ChiffresRepetes
+
+Variables
+    nombre, n, chiffre, i : Entier
+    occurrences : Tableau[0..9] d'Entier
+    trouve : Booléen
+
+Début
+
+    Pour nombre allant de 100 à 2000 faire
+
+        Pour i allant de 0 à 9 faire
+            occurrences[i] ← 0
+        FinPour
+
+        n ← nombre
+
+        TantQue n > 0 faire
+            chiffre ← n MOD 10
+            occurrences[chiffre] ← occurrences[chiffre] + 1
+            n ← n DIV 10
+        FinTantQue
+
+        trouve ← Faux
+
+        Pour i allant de 0 à 9 faire
+            Si occurrences[i] = 2 Alors
+                trouve ← Vrai
+            FinSi
+        FinPour
+
+        Si trouve Alors
+            Écrire(nombre)
+        FinSi
+
+    FinPour
+
+Fin
+```
